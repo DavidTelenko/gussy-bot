@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "baseUrl": ".",
+    "declaration": false,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "lib": ["ESNext", "DOM"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "build",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "ESNext"
+  },
+  "include": ["**/*.ts", "*.config.js", "*.config.mjs"]
+}

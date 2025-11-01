@@ -1,0 +1,12 @@
+# Private
+.env
+
+# Artifacts
+.pnpm-store/
+build/
+
+# Libs
+node_modules/
+
+# Logs
+pnpm-debug.log*
