@@ -23,7 +23,18 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "correctness": {
+        "noUnusedImports": "error"
+      },
+      "nursery": {
+        "noFloatingPromises": "error"
+      },
+      "recommended": true,
+      "style": {
+        "useBlockStatements": "error",
+        "useConst": "error",
+        "useImportType": "error"
+      }
     }
   },
   "vcs": {
