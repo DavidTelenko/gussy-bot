@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const commaSeparatedArray = z
+export const commaSeparatedNumberArray = z
   .string()
   .transform((value) =>
     value.split(',').map((value) => Number.parseInt(value.trim(), 10)),

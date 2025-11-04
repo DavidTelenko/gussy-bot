@@ -1,5 +1,4 @@
 import fs from 'node:fs';
-import { loadEnvFile } from 'node:process';
 import z from 'zod';
 import { cyan, green } from './colors.js';
 import { safeEval } from './error.js';
@@ -56,7 +55,7 @@ const loadFromFile = (path: string) => {
     );
   }
 
-  const { error: loadError } = safeEval(() => loadEnvFile(path));
+  const { error: loadError } = safeEval(() => process.loadEnvFile(path));
 
   if (loadError) {
     console.error(loadError.message);

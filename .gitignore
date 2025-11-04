@@ -3,6 +3,7 @@
 
 # Artifacts
 .pnpm-store/
+.wrangler/
 build/
 
 # Libs

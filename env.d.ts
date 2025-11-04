@@ -7,3 +7,5 @@ declare global {
     interface ProcessEnv extends EnvSchema {}
   }
 }
+
+interface Env extends EnvSchema {}

@@ -6,10 +6,10 @@ export default defineConfig({
     {
       addWords: true,
       name: 'project-words',
-      path: './.words.txt',
+      path: '.words.txt',
     },
   ],
-  ignorePaths: ['pnpm-lock.yaml', './.words.txt'],
+  ignorePaths: ['pnpm-lock.yaml', '.words.txt', 'worker-configuration.d.ts'],
   language: 'en,en-US',
   languageSettings: [
     {
