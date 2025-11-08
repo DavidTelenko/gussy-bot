@@ -1,19 +1,12 @@
 import { httpServerHandler } from 'cloudflare:node';
-import { createServer } from 'http';
+import { createServer } from 'node:http';
 import { Composer, Telegraf } from 'telegraf';
 import { message } from 'telegraf/filters';
 import { audio, spoiler, video } from '@/commands/index.js';
-import { envSchema } from '@/env.schema.js';
 import { protect } from '@/middleware/protect.js';
 import { withoutCommand } from '@/middleware/withoutCommand.js';
 import { withUrl } from '@/middleware/withUrl.js';
-import { loadEnv } from '@/utils/env.js';
 import type { LocalContext } from '@/utils/telegram/types.js';
-
-loadEnv({
-  path: '.env',
-  schema: envSchema,
-});
 
 const bot = new Telegraf<LocalContext>(process.env.BOT_TOKEN);
 
@@ -42,8 +35,10 @@ process.on('uncaughtException', (error) => {
   console.error(error);
 });
 
-createServer(bot.webhookCallback(`/${process.env.SECRET_PATH}`)).listen(
-  process.env.PORT,
-);
+const port = Number.parseInt(process.env.PORT, 10);
 
-export default httpServerHandler({ port: process.env.PORT });
+createServer(bot.webhookCallback(`/${process.env.SECRET_PATH}`)).listen(port);
+
+export default httpServerHandler({ port });
+
+// bot.launch();

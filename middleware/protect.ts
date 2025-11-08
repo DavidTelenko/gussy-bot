@@ -9,7 +9,7 @@ export const protect: Middleware<LocalContext> = async (context, next) => {
 
   // Simple protection measure for now
   if (
-    !process.env.WHITELIST.includes(context.message?.from.id) ||
+    !process.env.WHITELIST.includes(context.message?.from.id.toString()) ||
     context.message?.from.is_bot
   ) {
     return;
