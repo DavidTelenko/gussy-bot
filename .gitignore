@@ -4,6 +4,7 @@
 # Artifacts
 .pnpm-store/
 .wrangler/
+.yarn/
 build/
 
 # Libs

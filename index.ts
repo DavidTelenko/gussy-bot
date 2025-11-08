@@ -23,20 +23,13 @@ bot.use(async (context, next) => {
   console.log(context.message);
   return next();
 });
-
 bot.use(protect);
-
 bot.catch((error) => console.error(error));
 
 const mediaCommands = new Composer<LocalContext>();
 
 mediaCommands.use(withUrl);
-
-// TODO: all the following handlers have common things, we can simplify and
-// extract common logic out of it
-
 mediaCommands.use(withoutCommand).on(message('text'), video.middleware);
-
 mediaCommands
   .command(spoiler.config.command, spoiler.command)
   .command(audio.config.command, audio.command)

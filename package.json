@@ -11,24 +11,24 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
     "typescript": "^5.9.3",
-    "wrangler": "^4.45.3"
+    "wrangler": "^4.46.0"
   },
   "license": "MIT",
   "name": "gussy-bot",
+  "packageManager": "yarn@4.11.0",
   "private": true,
   "scripts": {
-    "build": "yarn clean && tsc",
+    "build": "yarn clean && tsgo",
     "check": "biome check --write .",
     "clean": "rm -rf ./build",
-    "deploy": "wrangler deploy",
+    "deploy": "wrangler deploy --keep-vars",
     "dev": "wrangler dev",
     "format": "biome format --write .",
     "lint": "biome lint --write .",
     "prepare": "husky",
-    "set-webhook": "node ./scripts/setWebhook.js",
+    "set-webhook": "telegraf -m setWebhook",
     "spellcheck": "cspell --no-progress --no-must-find-files .",
-    "typecheck": "tsc --noEmit",
-    "typecheck-go": "tsgo --noEmit"
+    "typecheck": "tsgo --noEmit"
   },
   "type": "module",
   "version": "0.1.0"
